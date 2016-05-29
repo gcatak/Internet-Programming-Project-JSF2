@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<navigation-rule>
+		<from-view-id>Student_Login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Student_Course_Page</from-outcome>
+			<to-view-id>/secured/Student_Course_Page.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/secured/Student_Course_Page.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Change_Password</from-outcome>
+			<to-view-id>/secured/Student_Change_Password_Page.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/secured/Student_Change_Password_Page.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Back</from-outcome>
+			<to-view-id>/secured/Student_Course_Page.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/secured/Student_Course_Page.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Student_Assignment_Page</from-outcome>
+			<to-view-id>/secured/Student_Assignment_Page.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+ 	 	<managed-bean-name>user</managed-bean-name>
+ 	 	<managed-bean-class>StudentLogin</managed-bean-class>
+  		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+ 	 	<managed-bean-name>users</managed-bean-name>
+ 	 	<managed-bean-class>AdminLogin</managed-bean-class>
+  		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<managed-bean>
+ 	 	<managed-bean-name>courseDatas</managed-bean-name>
+ 	 	<managed-bean-class>CourseDataTable</managed-bean-class>
+  		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean> 
+</faces-config>

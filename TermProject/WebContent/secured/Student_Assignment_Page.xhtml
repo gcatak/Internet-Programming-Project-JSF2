@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head><title>Student Assignment Page</title>
+</h:head>
+<h:body>
+<div align="center">
+	<h2>
+		<h:outputText value="#{userStudent.selectedCourse.courseId} Course" />
+	</h2>
+	<br/>
+	<h:form>
+	<h:dataTable value="#{assignmentDataTable.assignments}" var="assign" border="1">
+		<h:column >
+			<f:facet name="header">
+				<h:outputText  value="ID"/>
+			</f:facet>
+			<h:commandLink value="#{assign.assId}"/>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Assignment Name"/>
+			</f:facet>
+			<h:outputText value="#{assign.assName}"/>
+		</h:column>
+		<h:column >
+			<f:facet name="header">
+				<h:outputText value="Due Date"/>
+			</f:facet>
+					<h:outputText value="#{assign.dueDate}"/>
+		</h:column>
+		<h:column >
+			<f:facet name="header">
+				<h:outputText value="Status"/>
+			</f:facet>
+			<h:outputText value="#{assign.assStatus}"/>
+			<br/>
+			<h:outputText value="#{assign.stuStatus}"/>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Grade"/>
+			</f:facet>
+			<h:outputText value="#{assign.grade}"/>
+		</h:column>
+	</h:dataTable>
+</h:form>
+</div></h:body>
+</html>

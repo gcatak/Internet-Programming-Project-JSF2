@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14627256990680" configfile="/TermProject/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Student_Login.xhtml" x="122" y="178" id="pf14627909813926" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14627909813927" path="Student_Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secured/Student_Course_Page.xhtml" x="338" y="562" id="pf14627909813928" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf146281905201541 pf14636050784230" inlinks="pf14627909813927 pf146286380478544" path="/secured/Student_Course_Page.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secured/Student_Change_Password_Page.xhtml" x="122" y="562" id="pf146281905201542" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf146286380478544" inlinks="pf146281905201541" path="/secured/Student_Change_Password_Page.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secured/Student_Assignment_Page.xhtml" x="554" y="562" id="pf14636050784231" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14636050784230" path="/secured/Student_Assignment_Page.xhtml"/>
+  <links id="pf14627909813927" target="pf14627909813928" source="pf14627909813926" outcome="Student_Course_Page" redirect="true"/>
+  <links id="pf146281905201541" target="pf146281905201542" source="pf14627909813928" outcome="Change_Password" redirect="true"/>
+  <links id="pf146286380478544" target="pf14627909813928" source="pf146281905201542" outcome="Back" redirect="true"/>
+  <links id="pf14636050784230" target="pf14636050784231" source="pf14627909813928" outcome="Student_Assignment_Page" redirect="true"/>
+</pageflow:Pageflow>
